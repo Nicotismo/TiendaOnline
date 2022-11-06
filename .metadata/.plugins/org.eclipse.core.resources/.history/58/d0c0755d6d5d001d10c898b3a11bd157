@@ -1,0 +1,46 @@
+package com.example.demo.Servicio;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.Entidad.DetalleUsuario;
+import com.example.demo.Repositorio.DetalleURepository;
+
+
+@Service
+public class ServicioDetalleU {
+	
+	@Autowired
+	DetalleURepository detalleusuarioRepository;
+	
+	public List<DetalleUsuario> Listar(){
+		return (List<DetalleUsuario>)detalleusuarioRepository.findAll();
+	}
+	public DetalleUsuario obtenerPorId(Long identificacion) {
+		
+		return detalleusuarioRepository.findById(identificacion).get();
+	}
+	public void agregar (DetalleUsuario detalleusuario) {
+		
+		detalleusuarioRepository.save(detalleusuario);
+	}
+	
+	public void consultar (DetalleUsuario detalleusuario) {
+		
+		detalleusuarioRepository.save(detalleusuario);
+	}
+	
+	public void actualizar (DetalleUsuario detalleusuario) {
+		
+		detalleusuarioRepository.save(detalleusuario);
+		
+	}
+	
+	public void eliminar (Long id) {
+		
+		detalleusuarioRepository.delete(obtenerPorId(id));
+	}
+
+}

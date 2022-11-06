@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Table"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.math.BigDecimal"/>
+    <fullyQualifiedTypeName name="com.example.demo.Enum.Estado"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.example.demo.Repositorio.UsuarioRepository"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.example.demo.Entidad.Usuario"/>
+    <fullyQualifiedTypeName name="com.example.demo.Repositorio.ProductoRepository"/>
+    <fullyQualifiedTypeName name="com.example.demo.Entidad.Producto"/>
+    <fullyQualifiedTypeName name="com.example.demo.Repositorio.PedidoRepository"/>
+    <fullyQualifiedTypeName name="com.example.demo.Entidad.Pedido"/>
+    <fullyQualifiedTypeName name="com.example.demo.Repositorio.RolRepository"/>
+    <fullyQualifiedTypeName name="com.example.demo.Entidad.Rol"/>
+    <fullyQualifiedTypeName name="com.example.demo.Repositorio.DetalleURepository"/>
+    <fullyQualifiedTypeName name="com.example.demo.Repositorio.DetallePRepository"/>
+    <fullyQualifiedTypeName name="com.example.demo.Entidad.DetallePedido"/>
+    <fullyQualifiedTypeName name="com.example.demo.Entidad.Categoria"/>
+    <fullyQualifiedTypeName name="com.example.demo.Repositorio.CategoriaRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="com.example.demo.Repositorio.CarritoRepository"/>
+    <fullyQualifiedTypeName name="com.example.demo.Entidad.Carrito"/>
+</qualifiedTypeNameHistroy>
