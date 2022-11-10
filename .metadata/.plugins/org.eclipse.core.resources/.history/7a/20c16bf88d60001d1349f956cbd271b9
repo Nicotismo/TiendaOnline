@@ -1,0 +1,100 @@
+package com.example.demo.Entidad;
+
+import java.time.LocalDate;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import com.example.demo.Enum.Estado;
+
+
+@Entity
+@Table (name="Usuario")
+
+public class Usuario {
+	
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private long Id;
+		private String email;
+		private String Password;
+		private LocalDate FechaRegistro;
+		@OneToOne(cascade = CascadeType.ALL)
+		@JoinColumn(name = "detalle_id", referencedColumnName = "id")
+		private DetalleUsuario detalle;
+		@Column(name = "estado")
+		@Enumerated(value = EnumType.STRING)
+		private Estado estado;
+		private Rol rol;
+		
+		
+		public Usuario(long id, String email, String password, LocalDate fechaRegistro, DetalleUsuario detalle,
+				Estado estado, Rol rol) {
+			super();
+			Id = id;
+			this.email = email;
+			Password = password;
+			FechaRegistro = fechaRegistro;
+			this.detalle = detalle;
+			this.estado = estado;
+			this.rol = rol;
+		}
+		public long getId() {
+			return Id;
+		}
+		public void setId(long id) {
+			Id = id;
+		}
+		public String getEmail() {
+			return email;
+		}
+		public void setEmail(String email) {
+			this.email = email;
+		}
+		public String getPassword() {
+			return Password;
+		}
+		public void setPassword(String password) {
+			Password = password;
+		}
+		public LocalDate getFechaRegistro() {
+			return FechaRegistro;
+		}
+		public void setFechaRegistro(LocalDate fechaRegistro) {
+			FechaRegistro = fechaRegistro;
+		}
+		public DetalleUsuario getDetalle() {
+			return detalle;
+		}
+		public void setDetalle(DetalleUsuario detalle) {
+			this.detalle = detalle;
+		}
+		public Estado getEstado() {
+			return estado;
+		}
+		public void setEstado(Estado estado) {
+			this.estado = estado;
+		}
+		public Rol getRol() {
+			return rol;
+		}
+		public void setRol(Rol rol) {
+			this.rol = rol;
+		}
+		
+		
+		
+	
+		
+		
+	}
+

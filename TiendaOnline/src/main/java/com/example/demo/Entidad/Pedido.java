@@ -1,0 +1,85 @@
+package com.example.demo.Entidad;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table (name="Pedido")
+
+public class Pedido {
+		
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private Long codigo;
+		@Column(name = "fecha_pedido")
+		private LocalDate fecha;
+		@Column(name = "total")
+		private BigDecimal total;
+		
+		//Relacion de muchos a uno//
+		@ManyToOne(fetch = FetchType.EAGER)
+		@JoinColumn(name = "usuario_id")
+		private Usuario usuario;
+		
+		
+		public Pedido(Long codigo, LocalDate fecha, BigDecimal total, Usuario usuario) {
+			super();
+			this.codigo = codigo;
+			this.fecha = fecha;
+			this.total = total;
+			this.usuario = usuario;
+		}
+
+
+		public Long getCodigo() {
+			return codigo;
+		}
+
+
+		public void setCodigo(Long codigo) {
+			this.codigo = codigo;
+		}
+
+
+		public LocalDate getFecha() {
+			return fecha;
+		}
+
+
+		public void setFecha(LocalDate fecha) {
+			this.fecha = fecha;
+		}
+
+
+		public BigDecimal getTotal() {
+			return total;
+		}
+
+
+		public void setTotal(BigDecimal total) {
+			this.total = total;
+		}
+
+
+		public Usuario getUsuario() {
+			return usuario;
+		}
+
+
+		public void setUsuario(Usuario usuario) {
+			this.usuario = usuario;
+		}
+		
+		
+		
+}

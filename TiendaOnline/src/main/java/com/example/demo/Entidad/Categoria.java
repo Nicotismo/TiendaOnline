@@ -1,0 +1,81 @@
+package com.example.demo.Entidad;
+
+
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.example.demo.Enum.Estado;
+
+@Entity
+@Table (name="Categoria")
+
+public class Categoria {
+		
+		@javax.persistence.Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private Long Id;
+		
+		@Column(name="nombre")
+		private String nombre;
+		
+		@Column(name="estado")
+		@Enumerated(value = EnumType.STRING)
+		private Estado estado;
+		// Agregamos la relacion de uno a muchos //
+		@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+		@JoinColumn(name="subcategoria")
+		private List <Categoria> subCategoria;
+		
+		public Categoria(Long id, String nombre, Estado estado, List<Categoria> subCategoria) {
+			super();
+			Id = id;
+			this.nombre = nombre;
+			this.estado = estado;
+			this.subCategoria = subCategoria;
+		}
+
+		public Long getId() {
+			return Id;
+		}
+
+		public void setId(Long id) {
+			Id = id;
+		}
+
+		public String getNombre() {
+			return nombre;
+		}
+
+		public void setNombre(String nombre) {
+			this.nombre = nombre;
+		}
+
+		public Estado getEstado() {
+			return estado;
+		}
+
+		public void setEstado(Estado estado) {
+			this.estado = estado;
+		}
+
+		public List<Categoria> getSubCategoria() {
+			return subCategoria;
+		}
+
+		public void setSubCategoria(List<Categoria> subCategoria) {
+			this.subCategoria = subCategoria;
+		}
+		
+		
+}

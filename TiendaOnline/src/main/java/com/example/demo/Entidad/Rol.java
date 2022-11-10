@@ -1,0 +1,68 @@
+package com.example.demo.Entidad;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.example.demo.Enum.Estado;
+
+@Entity
+@Table (name="Rol")
+
+public class Rol {
+		
+	
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private Long id;
+		@Column(name = "nombre")
+		private String nombre;
+		@Column(name = "estado")
+		@Enumerated(value = EnumType.STRING)
+		private Estado estado;
+		
+		
+		public Rol(Long id, String nombre, Estado estado) {
+			super();
+			this.id = id;
+			this.nombre = nombre;
+			this.estado = estado;
+		}
+
+
+		public Long getId() {
+			return id;
+		}
+
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+
+		public String getNombre() {
+			return nombre;
+		}
+
+
+		public void setNombre(String nombre) {
+			this.nombre = nombre;
+		}
+
+
+		public Estado getEstado() {
+			return estado;
+		}
+
+
+		public void setEstado(Estado estado) {
+			this.estado = estado;
+		}
+
+		
+}
