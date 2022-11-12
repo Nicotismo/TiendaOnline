@@ -1,0 +1,21 @@
+package com.example.demo.security.jwt;
+
+import java.io.IOException;
+
+import javax.security.sasl.AuthenticationException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class JwtEntryPoint implements AuthenticationEntryPoint{
+	
+	@Override
+	public void commence(HttpServletRequest request, HttpServletresponse response,
+			AuthenticationException authException) throws IOException, ServletException{
+		response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "No autorizado");
+	}
+	
+}

@@ -1,6 +1,7 @@
 package com.example.demo.Servicio;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,6 +42,9 @@ public class ServicioUsuario {
 	public void eliminar (Long id) {
 		
 		usuarioRepository.delete(obtenerPorId(id));
+	}
+	public Optional<Usuario > findOneByEmail(String email){
+		return usuarioRepository.findOneByEmail(email);
 	}
 	
 }

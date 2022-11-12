@@ -1,0 +1,7 @@
+package com.example.demo.dto;
+
+public class UsuarioAutenticado {
+		
+	private String email;
+	private String contraseña;
+}
